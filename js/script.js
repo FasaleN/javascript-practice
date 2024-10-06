@@ -24,45 +24,48 @@ if (randomNumber[0] === randomNumber[1] || randomNumber[1] === randomNumber[2] |
 
 const randomYear = prompt("Введіть свій рік народження");
 if ( randomYear === null) {
-    alert("Шкода, що Ви не захотіли вказати свій рік народження")
+    alert("Шкода, що Ви не захотіли вказати свій рік народження");
 }
 const randomCity = prompt("Введіть місто вашого проживання");
 if ( randomCity === null) {
-    alert("Шкода, що Ви не захотіли вказати своє місце проживання")
+    alert("Шкода, що Ви не захотіли вказати своє місце проживання");
 }
 const randomSport = prompt("Введіть свій улюблений вид спорту");
 if ( randomSport === null) {
-    alert("Шкода, що Ви не захотіли вказати свій улюбленний вид спорту")
+    alert("Шкода, що Ви не захотіли вказати свій улюбленний вид спорту");
+}
+if (randomYear != null) {
+    alert(`Ваш рік народження ${randomYear}`);
 }
 
-switch (true) {
-    case randomCity === 'Київ':
+switch (randomCity) {
+    case 'Київ':
         alert("Ви живете у столиці України!");
         break;
-    case randomCity === 'Вашингтон':
+    case 'Вашингтон':
         alert("Ви живете у столиці Сполучених Штатів Америки!")
         break;
-    case randomCity === 'Лондон':
+    case 'Лондон':
         alert("Ви живете у столиці Англії!")
         break;
-    case randomCity === null:
+    case null:
         break;
     default:
         alert(`Ви живете у місті ${randomCity}!`);
         break;
 }
 
-switch (true){
-    case randomSport === 'Брейк-данс' || randomSport === 'Брейкданс':
+switch (randomSport){
+    case 'Брейк-данс':
         alert("Ого, Ви хочеш бути як Hong 10?");
         break;
-    case randomSport === 'Бокс':
+    case 'Бокс':
         alert("Ого, Ви хочете бути як Олександр Усік?")
         break;
-    case randomSport === 'UFC':
+    case 'UFC':
         alert("Ого, Ви хочете бути як Mark Coleman?")
         break;
-    case randomSport === null:
+    case null:
         break;
     default:
         alert(`Ого, бажаю тобі успіхів у ${randomSport} `)
