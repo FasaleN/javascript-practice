@@ -1,47 +1,28 @@
-// First Homework
 
-let number = 20;
+//First Homework
 
-while (number <= 30) {
-    console.log(number);
-    number+=0.5;
+function removeLetter(userText, letterToRemove) {
+    for (let char of letterToRemove) {
+        userText = userText.split(char).join('');
+    }
+    return userText;
 }
+
+let userText = prompt('Введіть текст');
+let letterToRemove = prompt ('Введіть символи для видалення').split('');
+
+let result = removeLetter(userText, letterToRemove);
+alert(result);
 
 //Second Homework
 
-const result = 8;
-
-for(let value = 10; value <= 100; value+=10){
-    console.log(value*result);
+function getSumOfNumbers(sumNumbers) {
+    let numbers = sumNumbers.filter(item => typeof item === 'number');
+    if (numbers.length === 0) return 0
+    let sum = numbers.reduce((sum, num) => sum + num, 0);
+    return sum / numbers.length;
 }
 
-//Third Homework
-
-const N = prompt("Введіть число");
-
-for(let value = 1; value <= 100; value++){
-    if(value*value <= N){ // Можно ли это условие записать просто в цикл?
-        console.log(value);
-    }
-}
-
-//Fourth Homework
-
-const randomNumber = prompt("Введіть число");
-if (+randomNumber < 2) {
-    alert("Число не э простим")
-}  else {
-    let simpleNumber = true;
-    for (let i = 2; i < +randomNumber; i++) {
-        if (+randomNumber % i === 0) {
-            simpleNumber = false;
-            break;
-        }
-    }
-    if (simpleNumber) {
-        alert("Число э простим");
-    } else {
-        alert("Число не э простим");
-    }
-}
-
+let sumOfNumbers = [1, 'hello', true, 5, 8, null, 'world', 10];
+let resultSum = getSumOfNumbers(sumOfNumbers);
+alert(resultSum);
