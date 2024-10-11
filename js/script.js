@@ -1,39 +1,39 @@
 
 //First Homework
 
-function removeLetter(userText, letterToRemove) {
-    for (let char of letterToRemove) {
-        userText = userText.split(char).join('');
-    }
-    return userText;
+function getSumNumbers(){
+    let sum = 0;
+    return function(randomNumbers){
+        sum += randomNumbers;
+        return sum;
+    };
 }
-
-let userText = prompt('Введіть текст');
-let letterToRemove = prompt ('Введіть символи для видалення').split('');
-
-let result = removeLetter(userText, letterToRemove);
-alert(result);
+const finalSum = getSumNumbers();
+console.log(finalSum(4));
+console.log(finalSum(6));
+console.log(finalSum(10));
+console.log(finalSum(45));
 
 //Second Homework
 
-function getSumOfNumbers(sumNumbers) {
-    let numbers = sumNumbers.filter(item => typeof item === 'number');
-    if (numbers.length === 0) return 0
-    let sum = numbers.reduce((sum, num) => sum + num, 0);
-    return sum / numbers.length;
+function multiplySum(firstNumber){
+    return (secondNumber) => {
+        return firstNumber * secondNumber;
+    }
 }
-
-let sumOfNumbers = [1, 'hello', true, 5, 8, null, 'world', 10];
-let resultSum = getSumOfNumbers(sumOfNumbers);
-alert(resultSum);
+console.log(multiplySum(5)(2));
 
 //Third Homework
 
-function removeElement(array, item){
-    const newArray = array.indexOf(item);
-    if (newArray !== -1) array.splice(newArray, 1);
-    return array;
+function getRandomNumbers(){
+    let userNumber;
+    for(let i = 0; i < 10; i++) {
+        userNumber = +prompt('Введіть число більше 100')
+        if (userNumber > 100) {
+            console.log(`Введене число більше 100 ${userNumber}`);
+            return;
+        }
+        if (userNumber === null)break;
+    }
 }
-const array = [1, 3, 4, 6, 2, 5, 7];
-removeElement(array,4);
-console.log(array);
+getRandomNumbers();
